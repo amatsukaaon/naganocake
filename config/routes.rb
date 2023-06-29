@@ -28,6 +28,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
      get 'customers/my_page' => 'customers#show', as: 'mypage'
      patch 'customers/information' => 'customers#update'
      get 'customers/confirm' => 'customers#confirm'
+     patch 'customers/withdraw' => 'customers#withdraw'
      get 'about' => 'homes#about', as: 'about'
 
 

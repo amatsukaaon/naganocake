@@ -16,7 +16,9 @@ def customer_state
   ## 【処理内容2】 取得アカウントのパスワードと入力パスワードが一致か判別
   if @customer.valid_password?(params[:customer][:password])
     ## 【処理内容3】
+    if @customer.is_deleted == true
     redirect_to new_customer_registration_path
+  end
   end
 end
 
