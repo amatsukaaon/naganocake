@@ -14,9 +14,9 @@ class Public::CustomersController < ApplicationController
   end
 
   def withdraw
-    customer = Customer.find(params[:id])
-    customer.update(customer_params)
-    redirect_to customer_path(list.id)
+    customer = current_customer
+    customer.update(is_deleted: true)
+    redirect_to root_path
   end
 
 
